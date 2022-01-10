@@ -17,17 +17,6 @@ function rectangle(squareNum) {
     }
 }
 
-//Prints out grid
-rectangle(8);
-
-//Mouseover boxes
-const overBox = document.querySelectorAll(".square");
-overBox.forEach((o) => {
-    o.addEventListener("mouseover", () => {
-        o.style.backgroundColor = "yellow";
-    })
-});
-
 //Refresh Grid Button
 const button = document.createElement('button');
 button.textContent = "Restart";
@@ -43,7 +32,7 @@ document.body.insertBefore(button, box);
 
 
 
-//Change Grid Size Scroll
+//Range Slider
 const range = document.createElement('rangeSlider');
 const slider = document.createElement('input');
 slider.setAttribute("type", "range");
@@ -52,3 +41,29 @@ slider.setAttribute("max", 64);
 slider.setAttribute("value", 10);
 range.appendChild(slider);
 document.body.insertBefore(range, box);
+
+//Start with 10x10
+rectangle(10);
+hover();
+
+//Change Grid Size with Slider
+range.addEventListener("change", () => {
+    const delSquares = document.querySelectorAll('.row');
+    delSquares.forEach((d) => {
+        d.remove();
+    });
+    console.log(slider.value);
+    rectangle(slider.value);
+    hover();
+})
+
+
+//Mouseover boxes
+function hover() {
+    let overBox = document.querySelectorAll(".square");
+    overBox.forEach((o) => {
+        o.addEventListener("mouseover", () => {
+            o.style.backgroundColor = "yellow";
+        })
+    });
+}
