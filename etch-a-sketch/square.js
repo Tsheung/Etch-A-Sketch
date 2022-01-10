@@ -59,6 +59,7 @@ range.addEventListener("change", () => {
     });
     console.log(slider.value);
     rectangle(slider.value);
+    num.textContent = "Grid Size: " + slider.value + " x " + slider.value;
     hover();
 })
 
