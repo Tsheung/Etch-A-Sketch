@@ -13,12 +13,34 @@ function rectangle(squareNum) {
             square.classList.add('square');
             row.appendChild(square);
         }
-        //const br = document.createElement('br');
-        //box.appendChild(br);
         box.appendChild(row);
     }
 }
 
-
 //Prints out grid
 rectangle(4);
+
+//Mouseover boxes
+const overBox = document.querySelectorAll(".square");
+overBox.forEach((o) => {
+    o.addEventListener("mouseover", () => {
+        o.style.backgroundColor = "yellow";
+    })
+});
+
+//Refresh Grid Button
+const button = document.createElement('button');
+button.textContent = "Restart";
+button.addEventListener("click", () => {
+    location.reload();
+})
+document.body.insertBefore(button, box);
+
+
+//Change colors HEX
+
+
+
+
+
+//Change Grid Size Scroll
