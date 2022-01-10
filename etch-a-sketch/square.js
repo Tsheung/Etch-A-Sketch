@@ -40,6 +40,7 @@ slider.setAttribute("min", 5);
 slider.setAttribute("max", 64);
 slider.setAttribute("value", 10);
 
+
 //Add slider numbers
 let num = document.createTextNode("Grid Size: " + slider.value + " x " + slider.value);
 
@@ -52,7 +53,7 @@ rectangle(10);
 hover();
 
 //Change Grid Size with Slider
-range.addEventListener("change", () => {
+range.addEventListener("input", () => {
     const delSquares = document.querySelectorAll('.row');
     delSquares.forEach((d) => {
         d.remove();
