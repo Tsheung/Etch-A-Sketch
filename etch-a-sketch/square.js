@@ -18,7 +18,7 @@ function rectangle(squareNum) {
 }
 
 //Prints out grid
-rectangle(4);
+rectangle(8);
 
 //Mouseover boxes
 const overBox = document.querySelectorAll(".square");
@@ -37,10 +37,18 @@ button.addEventListener("click", () => {
 document.body.insertBefore(button, box);
 
 
-//Change colors HEX
+//Change colors HEX or at least rainbow (random RGB)
 
 
 
 
 
 //Change Grid Size Scroll
+const range = document.createElement('rangeSlider');
+const slider = document.createElement('input');
+slider.setAttribute("type", "range");
+slider.setAttribute("min", 5);
+slider.setAttribute("max", 64);
+slider.setAttribute("value", 10);
+range.appendChild(slider);
+document.body.insertBefore(range, box);
