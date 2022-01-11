@@ -20,6 +20,7 @@ function rectangle(squareNum) {
 //Refresh Grid Button
 const button = document.createElement('button');
 button.textContent = "Restart";
+button.setAttribute("id", "refresh");
 button.addEventListener("click", () => {
     location.reload();
 })
@@ -28,6 +29,7 @@ document.body.insertBefore(button, box);
 
 //Range Slider
 const range = document.createElement('rangeSlider');
+range.setAttribute("id", "rangeSlider");
 const slider = document.createElement('input');
 slider.setAttribute("type", "range");
 slider.setAttribute("min", 5);
@@ -45,6 +47,7 @@ document.body.insertBefore(range, box);
 //Color Picker Button
 const colors = document.createElement('input');
 colors.setAttribute("type", "color");
+colors.setAttribute("id", "colorPicker");
 colors.setAttribute("value", "000000");
 colors.addEventListener("change", () => {
     hover(colors.value);
@@ -55,6 +58,7 @@ document.body.insertBefore(colors, box);
 //Rainbow Button
 const rain = document.createElement('button');
 rain.textContent = "Rainbow";
+rain.setAttribute("id", "rainbow");
 rain.addEventListener("click", () => {
     hover("randColor");
 })
@@ -64,6 +68,7 @@ document.body.insertBefore(rain, box);
 //Eraser Button
 const eraser = document.createElement('button');
 eraser.textContent = "Eraser";
+eraser.setAttribute("id", "eraser");
 eraser.addEventListener("click", () => {
     hover("eraser");
 })
