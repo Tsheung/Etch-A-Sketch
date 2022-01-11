@@ -62,6 +62,12 @@ document.body.insertBefore(rain, box);
 
 
 //Eraser Button
+const eraser = document.createElement('button');
+eraser.textContent = "Eraser";
+eraser.addEventListener("click", () => {
+    hover("eraser");
+})
+document.body.insertBefore(eraser, box);
 
 
 //Start with 10x10
