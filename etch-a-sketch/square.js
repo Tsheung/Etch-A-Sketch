@@ -45,7 +45,7 @@ document.body.insertBefore(range, box);
 //Change colors HEX or at least rainbow (random RGB)
 const colors = document.createElement('input');
 colors.setAttribute("type", "color");
-colors.setAttribute("value", "FFFFFF");
+colors.setAttribute("value", "000000");
 document.body.insertBefore(colors, box);
 
 
@@ -71,7 +71,7 @@ function hover() {
     let overBox = document.querySelectorAll(".square");
     overBox.forEach((o) => {
         o.addEventListener("mouseover", () => {
-            o.style.backgroundColor = "yellow";
+            o.style.backgroundColor = colors.value;
         })
     });
 }
