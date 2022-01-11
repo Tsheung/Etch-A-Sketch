@@ -26,9 +26,13 @@ body{
     flex-direction:column;
     align-items:center;
     background-color:#DFECC0;
+    height:100vh;
+    width:100%;
 }
 
 h1{
+    display:flex;
+    justify-content:center;
     font-size:55px;
     font-family: "Gill Sans", sans-serif;
 }
@@ -47,6 +51,7 @@ h1{
     gap:15px;
     margin-bottom:25px;
     align-items:center;
+    justify-content:center;
 }
 
 #refresh,
@@ -74,3 +79,22 @@ h1{
     color:black;
 }
 
+
+.github {
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family: "Gill Sans", sans-serif;
+    width:100%;
+    justify-content:center;
+}
+
+.github img {
+    height:30px;
+}
+
+.top {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}

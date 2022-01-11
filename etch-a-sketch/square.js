@@ -1,3 +1,9 @@
+//Create title
+const title = document.createElement('h1');
+const t = document.createTextNode("Etch A Sketch");
+title.appendChild(t);
+document.body.appendChild(title);
+
 //Create overall box container
 const box = document.createElement('div');
 box.classList.add('box');
@@ -131,5 +137,17 @@ image.setAttribute("alt", "Github logo that links to my github");
 image.addEventListener("click", () => {
     window.open("https://github.com/Tsheung/Etch-A-Sketch", "_blank");
 })
+const username = document.createElement('p');
+username.innerHTML = "Tsheung";
 banner.appendChild(image);
+banner.appendChild(username);
 document.body.appendChild(banner);
+
+
+//Container to Separate Top and Bottom
+const topBanner = document.createElement('div');
+topBanner.classList.add("top");
+topBanner.appendChild(title);
+topBanner.appendChild(panel);
+topBanner.appendChild(box);
+document.body.insertBefore(topBanner, banner);
