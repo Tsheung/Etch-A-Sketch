@@ -42,11 +42,26 @@ range.appendChild(slider);
 range.appendChild(num);
 document.body.insertBefore(range, box);
 
-//Change colors HEX or at least rainbow (random RGB)
+//Color Picker Button
 const colors = document.createElement('input');
 colors.setAttribute("type", "color");
 colors.setAttribute("value", "000000");
+colors.addEventListener("change", () => {
+    hover(colors.value);
+})
+
 document.body.insertBefore(colors, box);
+
+//Rainbow Button
+const rain = document.createElement('button');
+rain.textContent = "Rainbow";
+rain.addEventListener("click", () => {
+    hover("randColor");
+})
+document.body.insertBefore(rain, box);
+
+
+//Eraser Button
 
 
 //Start with 10x10
@@ -59,7 +74,6 @@ range.addEventListener("input", () => {
     delSquares.forEach((d) => {
         d.remove();
     });
-    console.log(slider.value);
     rectangle(slider.value);
     num.textContent = "Grid Size: " + slider.value + " x " + slider.value;
     hover();
@@ -67,11 +81,22 @@ range.addEventListener("input", () => {
 
 
 //Mouseover boxes
-function hover() {
+function hover(colorChoice = "black") {
     let overBox = document.querySelectorAll(".square");
     overBox.forEach((o) => {
         o.addEventListener("mouseover", () => {
-            o.style.backgroundColor = colors.value;
+            if(colorChoice === "randColor") {
+                o.style.backgroundColor = randomColor();
+            } else if (colorChoice === "eraser"){
+                o.style.backgroundColor = "white";
+            } else {
+                o.style.backgroundColor = colorChoice;
+            }
         })
     });
+}
+
+function randomColor() {
+    let randColor = "#" + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+    return randColor;
 }
