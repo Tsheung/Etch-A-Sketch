@@ -26,12 +26,6 @@ button.addEventListener("click", () => {
 document.body.insertBefore(button, box);
 
 
-//Change colors HEX or at least rainbow (random RGB)
-
-
-
-
-
 //Range Slider
 const range = document.createElement('rangeSlider');
 const slider = document.createElement('input');
@@ -47,6 +41,13 @@ let num = document.createTextNode("Grid Size: " + slider.value + " x " + slider.
 range.appendChild(slider);
 range.appendChild(num);
 document.body.insertBefore(range, box);
+
+//Change colors HEX or at least rainbow (random RGB)
+const colors = document.createElement('input');
+colors.setAttribute("type", "color");
+colors.setAttribute("value", "FFFFFF");
+document.body.insertBefore(colors, box);
+
 
 //Start with 10x10
 rectangle(10);
