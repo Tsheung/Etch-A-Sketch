@@ -1,10 +1,8 @@
 .square {
     background-color:white;
-    /*max-width:100px;
-    max-height:100px;*/
     min-width:5px;
     min-height:5px;
-    border: 0.5px solid black;
+    border: 1.5px solid black;
     display:flex;
     flex: 1 0 auto;
 }
@@ -13,9 +11,8 @@
 .box {
     display:flex;
     flex-direction:row;
-    width:600px;
-    height:600px;
-    /*flex: 1 0 auto;*/
+    width:700px;
+    height:700px;
 }
 
 .row{
@@ -40,10 +37,40 @@ h1{
     display:flex;
     flex-direction:column;
     align-items:center;
+    font-weight:bold;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:14px;
 }
 
 .panel {
     display:flex;
-    gap:10px;
+    gap:15px;
     margin-bottom:25px;
+    align-items:center;
 }
+
+#refresh,
+#rainbow,
+#eraser {
+    border-radius:3px;
+    /*border: 2px solid grey;*/
+    font-size:14px;
+    font-weight:bold;
+    height:38px;
+}
+
+#rainbow {
+    background-color: #F02D3A;;
+    color:#1E2EDE; 
+    border: 2px solid #38E2A1;
+}
+
+#eraser {
+    background-color: pink;
+}
+
+#refresh {
+    background-color: white;
+    color:black;
+}
+
