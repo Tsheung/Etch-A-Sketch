@@ -69,6 +69,16 @@ eraser.addEventListener("click", () => {
 })
 document.body.insertBefore(eraser, box);
 
+//Store all Buttons Together
+const panel = document.createElement('div');
+panel.classList.add('panel');
+panel.appendChild(button);
+panel.appendChild(range);
+panel.appendChild(colors);
+panel.appendChild(rain);
+panel.appendChild(eraser);
+document.body.insertBefore(panel,box);
+
 
 //Start with 10x10
 rectangle(10);
